@@ -15,7 +15,7 @@ public abstract class Player {
     public void setName (String name) {
         this.name = name;
     }
-      public abstract int makeGuess();
+    public abstract int makeGuess();
 
     public ArrayList<Integer> getGuesses() {
         return guesses;
