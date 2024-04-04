@@ -3,26 +3,40 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class GuessTheNumberGame {
+    private final int targetNumber;
+    public GuessTheNumberGame() {
+        Random random = new Random();
+        this.targetNumber = random.nextInt(100) + 1;
+    }
+    private boolean checkGuess(Player player) {
+        int guess = player.makeGuess();
+        if(guess>targetNumber){
+            System.out.print("Tú número es mayor");
+        } else if(guess<targetNumber) {
+            System.out.print("Tú número es menor");
+        } else {
+            System.out.print("Adivinaste");
+            return true;
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         ArrayList<Integer> guesses = new ArrayList<>();
-        guesses.add(9);
 
         Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-        int targetNumber = random.nextInt(100) + 1;
 
         System.out.println("<<GUESS THE NUMBER>>");
         System.out.print("Por favor, ingresa tu nombre: ");
         String playerName = scanner.nextLine();
 
         HumanPlayer humanPlayer = new HumanPlayer(playerName,guesses);
-        humanPlayer.makeGuess();
+        System.out.println("Hola, " + humanPlayer.getName() + ". ¡Juguemos!");
 
-    }
+        GuessTheNumberGame guessTheNumberGame = new GuessTheNumberGame();
+        System.out.println("Número a adivinar " + guessTheNumberGame.targetNumber);
+        guessTheNumberGame.checkGuess(humanPlayer);
 
-    public boolean checkGuess (Player player) {
-        return true;
     }
 
 }
