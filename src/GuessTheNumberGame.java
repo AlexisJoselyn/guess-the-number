@@ -11,11 +11,11 @@ public class GuessTheNumberGame {
     private boolean checkGuess(Player player) {
         int guess = player.makeGuess();
         if(guess>targetNumber){
-            System.out.print("Tú número es mayor");
+            System.out.println("Tú número es mayor");
         } else if(guess<targetNumber) {
-            System.out.print("Tú número es menor");
+            System.out.println("Tú número es menor");
         } else {
-            System.out.print("Adivinaste");
+            System.out.println("Adivinaste");
             return true;
         }
         return false;
@@ -36,6 +36,9 @@ public class GuessTheNumberGame {
         GuessTheNumberGame guessTheNumberGame = new GuessTheNumberGame();
         System.out.println("Número a adivinar " + guessTheNumberGame.targetNumber);
         guessTheNumberGame.checkGuess(humanPlayer);
+
+        ComputerPlayer computerPlayer = new ComputerPlayer("Computer Player", guesses);
+        guessTheNumberGame.checkGuess((computerPlayer));
 
     }
 
