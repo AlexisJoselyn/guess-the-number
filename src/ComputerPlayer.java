@@ -9,7 +9,7 @@ public class ComputerPlayer extends Player{
     public int makeGuess () {
         Random random = new Random();
         int guess = random.nextInt(100) + 1;
-        System.out.println(getName() + " Tu suposición es: " + guess);
+        System.out.println("Ahora es turno de la " + getName() + ": " + guess);
 
         getGuesses().add(guess);
 
