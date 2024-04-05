@@ -9,7 +9,7 @@ public class HumanPlayer extends Player{
 
     public int makeGuess () {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Introduce tu suposición (número): ");
+        System.out.print(getName() + ", introduce tu suposición (número): ");
         int guess = scanner.nextInt();
 
         getGuesses().add(guess);
