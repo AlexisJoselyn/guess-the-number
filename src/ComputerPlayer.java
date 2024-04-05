@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class ComputerPlayer extends Player{
 
@@ -6,6 +7,12 @@ public class ComputerPlayer extends Player{
         super(name, guesses);
     }
     public int makeGuess () {
-        return 1;
+        Random random = new Random();
+        int guess = random.nextInt(100) + 1;
+        System.out.println(getName() + " Tu suposición es: " + guess);
+
+        getGuesses().add(guess);
+
+        return guess;
     }
 }
