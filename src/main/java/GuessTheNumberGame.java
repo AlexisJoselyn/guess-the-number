@@ -23,7 +23,7 @@ public class GuessTheNumberGame {
 
     public static void main(String[] args) {
         ArrayList<Integer> guessesHuman = new ArrayList<>();
-        ArrayList<Integer> guessesComputer = new ArrayList<>();
+            ArrayList<Integer> guessesComputer = new ArrayList<>();
 
         Scanner scanner = new Scanner(System.in);
 
